@@ -1,0 +1,58 @@
+{% extends 'layout.twig' %}
+{% block link %}
+{% endblock %}
+{% block content %}
+	<main class="container-fluid bg-light pb-4">
+		<h1 class="display-5 mb-3 ms-4">Me contacter</h1>
+		<div class="col-lg-5 col-md-5 col-sm-11 col-11 mx-auto">
+			<div class="card bg-light mb-3">
+				<div class="card-header bg-dark text-white text-uppercase">
+					<i class="fa fa-home"></i>Coordonnées</div>
+				<div class="card-body bg-light">
+					<b >Ylies AZOUZ</b>
+					<p class="mt-3"><a href="mailto:y.azouz@hotmail.fr">Email : y.azouz@hotmail.fr</a></p>
+					<p><a href="tel:+330662312279">Tel. 06 62 31 22 79</a></p>
+					<p >Marseille 9ème</p>
+					<p>France</p>
+				</div>
+			</div>
+		</div>
+		{# FORM #}
+		<div class="col-lg-5 col-md-5 col-sm-11 col-11 mx-auto">
+			<form class="my-0" method="post" action="/contact">
+				<div class="form-grou  my-2">
+					<label class="mb-2" for="name">Nom</label>
+					<input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Entrez votre nom" required="">
+				</div>
+				<div class="form-group my-2">
+					<label class="mb-2" for="email">Mail</label>
+					<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Entrez votre mail" required="">
+				</div>
+				<div class="form-group my-2">
+					<label class="mb-2" for="message">Message</label>
+					<textarea class="form-control" id="message" name="message" rows="6" placeholder="Entrez votre message" required=""></textarea>
+				</div>
+				<div class="mx-auto mt-2">
+					<button type="submit" class="btn  bg-black btn-primary text-right">Envoyez</button>
+				</div>
+			</form>
+		</div>
+		{# Reseau #}
+		<h1 class="display-5 mb-3 mt-3 ms-4">Réseaux</h1>
+		<div class="col-lg-5 col-md-5 col-sm-11 col-11 mx-auto my-5">
+			<ul class="nav d-flex justify-content-around list-unstyled">
+				<li class="mt-3 mx-3">
+					<a class="text-muted" href="https://www.instagram.com/yliestazz/" target="_blank"><img class="d-block mx-auto" src="./assets/pictures/insta.png" alt="" width="50" height="50"></a>
+				</li>
+				<li class="mt-3 mx-3">
+					<a class="text-muted" href="https://fr.linkedin.com/in/ylies-azouz-76852a195" target="_blank"><img class="d-block mx-auto " src="./assets/pictures/linked.png" alt="" width="50" height="50"></a>
+				</li>
+				<li class="mt-3 mx-3">
+					<a class="text-muted" href="https://github.com/?q=yliesAzouz" target="_blank"><img class="d-block mx-auto " src="./assets/pictures/gith.png" alt="" width="50" height="50"></a>
+				</li>
+			</ul>
+		</div>
+	</main>
+
+	<script src="Assets/js/index.js"></script>
+{% endblock %}

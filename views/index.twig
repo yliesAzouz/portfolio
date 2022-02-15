@@ -1,0 +1,56 @@
+{% extends 'layout.twig' %}
+{% block link %}
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock %}
+{% block content %}
+	<main class="bg-light py-4">
+		<div class="px-5 text-center">
+			<img class="d-block mx-auto mb-4" src="Assets/pictures/ylies.jpg" alt="" width="200" height="200">
+			<h1 class="display-5 fw-bold">Ylies AZOUZ</h1>
+			<div class="col-lg-6 mx-auto">
+				<p class="lead mb-4">Bonjour! Je me présente. Je suis Ylies AZOUZ. Ainé d'une fraterie de 3 enfants et un jeune papa de 29 ans, j'ai un tempérament de leader et le sens des responsabilités.
+										              Commercial dans l'âme, je suis sociable, ampathique et aime travailler en équipe. En effet, j'ai développé tous ces aspects en occupant le poste de gardien de but dans ma pratique du football.
+										              Je pratique aussi le VTT et le trail car j'aime me donner des défis personnels. ET JUSTEMENT... mon nouveau défis aujourd'hui est de progresser dans le monde du web...
+				</p>
+				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+					<button class="btn btn-primary btn-lg px-4 gap-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">A propos de moi</button>
+					<a href="/contact">
+						<button type="button" class="btn btn-outline-secondary btn-lg px-4">Me contacter</button>
+					</a>
+                    
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-10 col-md-5 col-lg-5 col-10 mx-auto">
+			<div class="collapse" id="collapseExample">
+				<div>
+				<hr>
+                    <div class="d-flex justify-content-around">
+                        <p class="col-6">Age</p>
+                        <p class="text-secondary col-6 text-end">29 ans</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-around">
+                        <p class="col-6">Lieu</p>
+                        <p class="text-secondary col-6 text-end">Marseille 9ème</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-around">
+                        <p class="col-6">Situation familliale</p>
+                        <p class="text-secondary col-6 text-end">Marié - 2 enfants</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-around">
+                        <p class="col-6">Vehicule</p>
+                        <p class="text-secondary col-6 text-end">Moto</p>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-around">
+                        <p class="col-6">Valeurs</p>
+                        <p class="text-secondary col-6 text-end">Partage, Respect, Sincerité</p>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}
