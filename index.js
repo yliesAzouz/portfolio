@@ -52,6 +52,7 @@ app.post('/contact', function(req, res){
     console.log(req.body);
     arr.push(req.body)
     res.redirect('/contact')
+    
 })
 
 //creation d'une route vers loisirs.twig
