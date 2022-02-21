@@ -83,7 +83,8 @@ app.post('/contact',async function (req, res) {
           console.log(error);
           message = "Le message n'a pa pu etre envoyé"
           res.render('contact.twig', {
-            message: message
+            message: message,
+            debug: Config.mail
         })
         } else {
           console.log('Email sent: ' + info.response);
