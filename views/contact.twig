@@ -1,6 +1,5 @@
 {% extends 'layout.twig' %}
-{% block link %}
-{% endblock %}
+{% block link %}{% endblock %}
 {% block content %}
 	<main class="container-fluid bg-light pb-4">
 		<h1 class="display-5 mb-3 ms-4">Me contacter</h1>
@@ -9,16 +8,23 @@
 				<div class="card-header bg-dark text-white text-uppercase">
 					<i class="fa fa-home"></i>Coordonnées</div>
 				<div class="card-body bg-light">
-					<b >Ylies AZOUZ</b>
-					<p class="mt-3"><a href="mailto:y.azouz@hotmail.fr">Email : y.azouz@hotmail.fr</a></p>
-					<p><a href="tel:+330662312279">Tel. 06 62 31 22 79</a></p>
-					<p >Marseille 9ème</p>
+					<b>Ylies AZOUZ</b>
+					<p class="mt-3">
+						<a href="mailto:y.azouz@hotmail.fr">Email : y.azouz@hotmail.fr</a>
+					</p>
+					<p>
+						<a href="tel:+330662312279">Tel. 06 62 31 22 79</a>
+					</p>
+					<p>Marseille 9ème</p>
 					<p>France</p>
 				</div>
 			</div>
 		</div>
 		{# FORM #}
 		<div class="col-lg-5 col-md-5 col-sm-11 col-11 mx-auto">
+		{% if message %}
+			<span>{{message}}</span>
+		{% endif %}
 			<form class="my-0" method="post" action="/contact">
 				<div class="form-grou  my-2">
 					<label class="mb-2" for="name">Nom</label>
