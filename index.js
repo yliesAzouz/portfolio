@@ -2,17 +2,18 @@ import express from "express";
 import nodemailer from 'nodemailer' // import de nodemailer
 import { Config } from './config.js'
 
-// debut nodemailer
+// debut du transporteur pour nodemailer
 let transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'gmail', // car mon adresse est en gmail. si autre (hotmail) changer cette config
   auth: {
-    user: Config.mail,
-    pass: Config.mailPass
+    user: Config.mail, // j'aurai pu mettre direct mon adresse mail mais elle aurait été visible sur github
+    pass: Config.mailPass // pareil que le commentaire au dessus
   }
 });
-// fin de nodemailer
+// fin du tranporteur pour nodemailer
 
-const app = express()
+const app = express() // pour initialiser express
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -20,7 +21,7 @@ app.listen(8090, function () {
     console.log('le serveur demarre sur le port 8080')
 });
 
-app.use(express.static('./public'));
+app.use(express.static('./public')); // pour qu'express lise les assets car il ne les lit pas par nature
 
 //creation d'une route vers index.twig
 app.get('/', function (req, res) {
@@ -71,20 +72,19 @@ app.get('/loisirs', function (req, res) {
 
 app.post('/contact',async function (req, res) {
     let message = "";
-    let mailOptions = {
+    let mailOptions = { // obligatoire pour la config de nodemailer (a mettre dans le post de la route souhaité)
         from: req.body.email,
         to: 'y.azouz@hotmail.fr',
-        subject: 'Demande de contact de ' + req.body.name + ' sur cv en ligne',
+        subject: 'Contact de ' + req.body.name + ' via le CV en ligne',
         text: req.body.message
       };
       
-     transporter.sendMail(mailOptions, function(error, info){
+     transporter.sendMail(mailOptions, function(error, info){ // obligatoire pour la config de nodemailer
         if (error) {
           console.log(error);
           message = "Le message n'a pa pu etre envoyé"
           res.render('contact.twig', {
-            message: message,
-            debug: error
+            message: message
         })
         } else {
           console.log('Email sent: ' + info.response);
