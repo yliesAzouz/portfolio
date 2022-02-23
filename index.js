@@ -82,15 +82,17 @@ app.post('/contact',async function (req, res) {
      transporter.sendMail(mailOptions, function(error, info){ // obligatoire pour la config de nodemailer
         if (error) {
           console.log(error);
-          message = "Le message n'a pa pu etre envoyé"
+          message = "Attention! Le message n'a pas pu être envoyé"
           res.render('contact.twig', {
-            message: message
+            message: message,
+            route: "contact"
         })
         } else {
           console.log('Email sent: ' + info.response);
           message = "Le message a été envoyé"
           res.render('contact.twig', {
-            message: message
+            message: message,
+            route: "contact"
         })
         }
       });

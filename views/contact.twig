@@ -1,5 +1,7 @@
 {% extends 'layout.twig' %}
-{% block link %}{% endblock %}
+{% block link %}
+ <link rel="stylesheet" href="assets/css/bg.css">
+{% endblock %}
 {% block content %}
 	<main class="container-fluid bg-light pb-4">
 		<h1 class="display-5 mb-3 ms-4">Me contacter</h1>
@@ -21,12 +23,12 @@
 			</div>
 		</div>
 		{# FORM #}
-		<div class="col-lg-5 col-md-5 col-sm-11 col-11 mx-auto">
+		<div class="col-lg-5 col-md-5 col-sm-11 col-11 mx-auto bg-light border rounded">
 		{% if message %}
-			<span>{{message}}</span>
+			<p class="text-center m-2 {% if message == 'Le message a été envoyé'  %} text-success {% elseif message != 'Le message a été envoyé' %} text-danger {% endif %}">{{message}}</p>
 		{% endif %}
-		{{debug}}
-			<form class="my-0" method="post" action="/contact">
+		
+			<form class="my-0 p-3 mx-auto col-11" method="post" action="/contact">
 				<div class="form-grou  my-2">
 					<label class="mb-2" for="name">Nom</label>
 					<input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Entrez votre nom" required="">

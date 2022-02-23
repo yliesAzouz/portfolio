@@ -3,6 +3,11 @@ body{
   width: 100%;
 }
 
+main{
+  background: url('../pictures/bg.png');
+  background-size: cover;
+}
+
 .flip-card {
     background-color: transparent;
     height: 350px;
